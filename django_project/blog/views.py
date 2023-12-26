@@ -14,13 +14,13 @@ posts=[
         'author':'Maurice',
         'title': 'Blog post 1',
         'content': 'First post content',
-        'date-posted':'May 6,2024'
+        'date_posted':'May 6,2024'
     },
     {
         'author':'Sharlene',
         'title': 'Blog post 2',
         'content': '2nd post content',
-        'date-posted':'March 16,2024'
+        'date_posted':'March 16,2024'
     }
 ]
 
@@ -29,8 +29,10 @@ def home(request):
     context={
         'posts':posts
     }
-    return render(request,'blog/home.html', context)
+
+
+    return render(request,'blog/home.html',context)
 
 
 def about(request):
-    return render(request, 'blog/about.html')
+    return render(request, 'blog/about.html', {'title':'about'})
