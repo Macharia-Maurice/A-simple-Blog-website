@@ -1,0 +1,12 @@
+{
+    "editor.detectIndentation": true,
+    "editor.experimentalWhitespaceRendering": "svg",
+    "notebook.breadcrumbs.showCodeCells": true,
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": true,
+    "editor.renderFinalNewline": "dimmed",
+    "editor.renderLineHighlight": "line",
+    "editor.colorDecorators": true,
+    "editor.guides.indentation": true,
+    "workbench.tree.renderIndentGuides": "none"
+}
