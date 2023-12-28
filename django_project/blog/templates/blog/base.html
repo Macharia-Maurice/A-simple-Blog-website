@@ -47,7 +47,26 @@
             <div class="navbar-nav">
 
               {% if user.is_authenticated %}
-                <a class="nav-item nav-link" href="{% url 'logout'%}">Logout</a>
+                <a class="nav-item nav-link" href="#" onclick="submitLogoutForm()">Logout</a>
+
+                <script>
+                    function submitLogoutForm() {
+                        var form = document.createElement('form');
+                        form.method = 'post';
+                        form.action = '{% url "logout" %}';
+
+                        var csrfToken = document.createElement('input');
+                        csrfToken.type = 'hidden';
+                        csrfToken.name = 'csrfmiddlewaretoken';
+                        csrfToken.value = '{{ csrf_token }}';
+
+                        form.appendChild(csrfToken);
+
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                </script>
+
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login'%}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'register'%}">Register</a>
